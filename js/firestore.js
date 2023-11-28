@@ -8,10 +8,8 @@ import {
     addDoc,
 } from 'https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js';
 
-let user_role = '';
-let user_email = '';
-
-export {user_role, user_email};
+let user_role = document.getElementById("email-info");
+let user_email = document.getElementById("role-info");
 
 /*
 import { firebaseConfig } from '../firebaseConfig.js';*/
@@ -74,9 +72,6 @@ login_form.addEventListener('submit', async (event) => {
                         alert("¡Bienvenido de nuevo! Correo: " + email);
                         // Redirect to new page
                         window.location.href = '../pantalla-inicio/pantalla-inicio.html';
-
-                        user_role = doc.data().role;
-                        user_email = doc.data().email;
                     
                         return ; // Exit the function
                     }
